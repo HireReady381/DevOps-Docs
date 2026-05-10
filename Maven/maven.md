@@ -52,6 +52,8 @@ Repositories
 Local Repository: Stored on your local machine (default is ~/.m2/repository).
 Central Repository: Maven’s default repository on the web (https://repo.maven.apache.org/maven2).
 Remote Repository: Custom repositories defined in pom.xml or settings.xml (e.g., internal corporate repository).
+
+
 3. Maven Build Lifecycle and Phases
 Build Lifecycle
 The default build lifecycle includes three main stages: clean, default (or build), and site.
@@ -70,6 +72,8 @@ mvn test: Runs tests using the JUnit testing framework.
 mvn package: Builds the project and packages it into a JAR/WAR file.
 mvn install: Installs the package into the local repository.
 mvn deploy: Deploys the package to the configured remote repository.
+
+
 4. Working with Plugins
 What are Maven Plugins?
 
@@ -93,6 +97,8 @@ Plugin Example:
         </plugin>
     </plugins>
 </build>
+
+
 5. Maven Profiles
 Purpose of Profiles:
 
@@ -116,12 +122,16 @@ Profile Example:
 Command to Activate Profile:
 
 mvn clean install -Pdev
+
+
 6. Dependency Scopes
 Scopes control the classpath for dependencies and when they are available:
 compile: Default scope, available everywhere.
 test: Only for testing; not included in the final package.
 provided: Available at compile and test time but assumed to be provided at runtime by the runtime environment.
 runtime: Available at runtime but not during compilation.
+
+
 7. Using Maven in CI/CD Pipelines
 Jenkins Integration
 Jenkins can automate Maven commands within a CI/CD pipeline.
@@ -136,11 +146,15 @@ FROM maven:3.8.4-jdk-11
 WORKDIR /app
 COPY . .
 RUN mvn clean package
+
+
 8. Best Practices for Using Maven in DevOps
 Use a Dependency Management Tool: Rely on pom.xml for dependency management to prevent conflicts.
 Consistent Plugin Versions: Define specific plugin versions to avoid version conflicts.
 Use Profiles for Environment Configuration: Use profiles to configure settings specific to different environments.
 Automate Tests and Deployments: Integrate Maven with CI/CD pipelines to automate builds and tests.
+
+
 9. Troubleshooting Common Maven Issues
 Dependency Conflicts
 Check for conflicting versions using mvn dependency:tree.
@@ -151,6 +165,8 @@ Use the X flag for detailed debugging information.
 Repository Access Issues
 Verify access to the central or remote repository.
 Configure proxy settings in settings.xml if behind a corporate firewall.
+
+
 10. Commands Reference Table
 Command	Description
 mvn clean	Cleans the project by deleting target directory
@@ -162,6 +178,8 @@ mvn deploy	Deploys the package to a remote repository
 mvn dependency:tree	Displays the dependency tree
 mvn -P<profile>	Runs Maven with a specific profile
 mvn help:effective-pom	Displays the effective POM with resolved inheritance and profiles
+
+
 Step 1: Download the JDK Binaries
 wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
 tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
@@ -181,6 +199,8 @@ $ java -version
 openjdk version "13.0.1" 2019-10-15
 OpenJDK Runtime Environment (build 13.0.1+9)
 OpenJDK 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+
+
 Installing Maven on Linux/Ubuntu
 Go to the URL: https://maven.apache.org/download.cgi Copy the link for the “Binary tar.gz archive” file. Then run the following commands to download and untar it.
 
