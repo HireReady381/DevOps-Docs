@@ -354,11 +354,11 @@ CMD ["python", "app.py"]
     
     # Maven Build Java Dockerfile
     FROM maven:3.8.5-openjdk-11 as build
-    WORKDIR /home/kafka/kumar/Mavendemo/
-    MAINTAINER Ashok
+    WORKDIR /home/kafka/hireready/Mavendemo/
+    MAINTAINER HireReady
     COPY Mavendemo/pom.xml .
     COPY Mavendemo/src ./src
-    ADD https://github.com/gashok13193/Mavendemo.git
+    ADD https://github.com/HireReady381/Mavendemo.git
     ENV test
     RUN mvn clean package
     
